@@ -1,0 +1,83 @@
+What asre the three forms of storage in Android?
+
+1) Internal file storage
+Files make that are save to internal storage are private to the app by default and 
+so cannot be accessed by external apps.the System creates a private directory on 
+the file system for each app created to be organized and saved in it. Files saved here can't be 
+modified/acessed by the user unless they have the permission to do so.
+2) External file storage
+it is a storage space that users can mount to a computer as an external storage device,
+and it might even be physically removable (such as an SD card). 
+Files saved here can be modified by the user by simply enabling USB mass storage to transfer files on a computer.
+
+3) Shared preferences: Store private primitive data in key-value pairs.
+4) Databases: Store structured data in a private database.
+
+
+Describe what the SQLITE is?
+SQLITEOPENHELPER
+A helper class to manage database creation and version management. 
+You create a subclass implementing onCreate(SQLiteDatabase), onUpgrade
+(SQLiteDatabase, int, int) and optionally onOpen(SQLiteDatabase), and
+this class takes care of opening the database if it exists, creating
+it if it does not, and upgrading it as necessary. Transactions are 
+used to make sure the database is always in a sensible state. 
+This class makes it easy for ContentProvider implementations to 
+defer opening and upgrading the database until first use, to avoid
+blocking application startup with long-running database upgrades. 
+
+Describe what an ORM is?
+ORM defines a mapping between your classes and database tables or class
+ members and table columns and the ORM manage the communication between
+ your codes and the underlying database. ORM framework wrap relation database 
+tables into the classes of programming language, so that instead of writing 
+SQL queries to manipulate the database, we can use methods and objects.
+
+List all ORM options in Android
+ORMLITE
+SugarORM
+GreenDAO
+ActiveAndroid
+Realm
+
+
+Explain what are runtime permissions.
+Runtime Permissions means that permissions required by the android app for it’s several operations.
+For example, if your app wants to capture images, you need to use camera of the android device. 
+You need to have permission for using the camera of the device.
+The primary purpose of the runtime permission is to protect the user’s data and personal 
+information such as contact list and SMS.
+Runtime permissions provides extra security to the user.
+
+Explain two main categories of runtime permissions
+Normal Permissions
+Normal permissions are considered as a low risky permissions. These permissions are less risky for user’s 
+privacy or for other app’s operations.For example INTERNET permission. Accessing internet is now a days 
+very common concept. Almost every app need internet for smooth functioning.
+Thus INTERNET is normal permission and developer do not need to ask it to the user at runtime. Just define 
+it in Manifest file and you are good to go.
+
+Some normal permissions :
+ACCESS_NETWORK_STATE
+ACCESS_WIFI_STATE
+BLUETOOTH
+CHANGE_NETWORK_STATE
+SET_ALARM
+
+
+Dangerous Permissions
+These are the permissions for which you are reading this tutorial. These permissions are dangerous to 
+user’s security, his device’s data and to the functioning of the other apps.
+For example, CONTACT permission comes under the dangerous concept. With this permission, 
+app can read the contacts of the user’s device and can also send them to server.
+Here, you need to ask for runtime permissions, because accessing the sensitive information
+ like contact require user’s attention.
+
+Several Dangerous Permissions:
+READ_CALENDAR
+ACCESS_FINE_LOCATION
+RECORD_AUDIO
+USE_SIP
+SEND_SMS
+
+
